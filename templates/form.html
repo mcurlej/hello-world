@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="sk">
+
+<head>
+    <title>Vloženie väzňa</title>
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+</head>
+<nav class="breadcrumb">
+  <a class="breadcrumb-item" href="#">Domov</a>
+  <span class="breadcrumb-item active">Formulár</span>
+  <a class="breadcrumb-item" href="#">Vyhľadavanie</a>
+</nav>
+
+<body>
+
+<h2 align="center">Formulár na vloženie väzňa do systému</h1>
+
+</body>
+<br><br>
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="inputFirstName" class="col-form-label">Meno</label>
+      <input type="FirstName" class="form-control" id="inputFirstName" placeholder="Meno">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputSecondName" class="col-form-label">Priezvisko</label>
+      <input type="SecondName" class="form-control" id="inputSecondName" placeholder="Priezvisko">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputGender" class="col-form-label">Pohlavie</label>
+      <select id="inputGender" class="form-control">Vyber
+        <option value="Male">M</option>
+        <option value="Female">F</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+    <label for="inputAddress" class="col-form-label">Trvalý pobyt</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Ulica a č. domu">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputCity" class="col-form-label">Mesto</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-1">
+      <label for="inputZip" class="col-form-label">PSČ</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="inputState" class="col-form-label">Štát</label>
+      <select id="inputState" class="form-control">Vyber
+        <option value="SVK">SVK</option>
+        <option value="CZ">CZ</option>
+        <option value="EU">EU</option>
+        <option value="MIMO EU">MIMO EU</option>
+      </select>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Vložiť</button>
+</form>
