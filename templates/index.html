@@ -8,58 +8,44 @@
 
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
-
 
 </head>
 
 <body>
-
     <div class="container">
-        <div class="header">
-            <nav>
-                <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="#">Home</a>
-                    </li>
-                    <li role="presentation"><a href="#">Sign In</a>
-                    </li>
-                    <li role="presentation"><a href="showSignUp">Sign Up</a>
-                    </li>
-                </ul>
-            </nav>
-            <h3 class="text-muted">Python Flask App</h3>
-        </div>
-
-        <div class="jumbotron">
-            <h1>Bucket List App</h1>
-            <p class="lead"></p>
-            <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Sign up today</a>
-            </p>
-        </div>
-
-        <div class="row marketing">
-            <div class="col-lg-6">
-                <h4>Bucket List</h4>
-                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-                <h4>Bucket List</h4>
-                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-                <h4>Bucket List</h4>
-                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-            </div>
-
-            <div class="col-lg-6">
-                <h4>Bucket List</h4>
-                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-                <h4>Bucket List</h4>
-                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-                <h4>Bucket List</h4>
-                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-            </div>
-        </div>
+        <a href="/prisoners/new">Novy Vazen</a>
+        
+<form action="{{ url_for('search') }}" method="POST">
+  <div class="form-row">
+    
+    <div class="form-group col-md-3">
+      <label for="inputFirstName" class="col-form-label">Search: </label>
+      <input type="FirstName" class="form-control" id="inputFirstName" placeholder="search" name="search">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Hladat</button>
+</form>
+        <table class="table table-inverse">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for prisoner in prisoners %}
+            <tr>
+              <th scope="row">{{prisoner["id"]}}</th>
+              <td>{{prisoner["first_name"]}}</td>
+              <td>{{prisoner["last_name"]}}</td>
+              <td><a href="/prisoner/{{prisoner['id']}}/edit">Edit</a></td>
+              <td><a href="/prisoner/{{prisoner['id']}}">Show</a></td>
+              <td><a href="/prisoner/{{prisoner['id']}}/delete">Delete</a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
 
         <footer class="footer">
             <p>&copy; Company 2015</p>
